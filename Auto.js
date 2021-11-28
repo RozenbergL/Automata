@@ -24,10 +24,14 @@ for(j = 0; j < m; j++){
 	}
 }
 ///console.log(del);
-///console.log(del[0]['б']);
 let state = 0;
 for (let i = 0; i < s.length; i++){
-	state = del[state][s.charAt(i)];
+	if (del[state][s.charAt(i)] == undefined){
+		///console.log(s.charAt(i));
+		state = 0;
+	}else{
+		state = del[state][s.charAt(i)];
+	}
 	if (state == t.length){
 		console.log(i - t.length + 1);
 	}
